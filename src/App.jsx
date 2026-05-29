@@ -20,7 +20,6 @@ import Testimonials from './components/Testimonials'
 import LeadForm from './components/LeadForm'
 import CTA from './components/CTA'
 import Footer from './components/Footer'
-import StickyBar from './components/StickyBar'
 import Preloader from './components/Preloader'
 import BawraBot from './components/BawraBot'
 import './index.css'
@@ -53,7 +52,6 @@ export default function App() {
       <LeadForm />
       <CTA />
       <Footer />
-      <StickyBar />
       <BawraBot />
 
       {/* Floating WhatsApp Button — Clean white icon on green */}

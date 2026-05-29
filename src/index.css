@@ -3590,3 +3590,399 @@ button { font-family: var(--FB); }
   .fd-play-badge { left: 0; }
   .fd-bottom-cta { flex-direction: column; align-items: flex-start; }
 }
+
+/* ═══════════════════════════════════════════════
+   COMPREHENSIVE RESPONSIVE — ALL BREAKPOINTS
+═══════════════════════════════════════════════ */
+
+/* ── 1280px — Large tablet / small laptop ── */
+@media (max-width: 1280px) {
+  .adv-grid { grid-template-columns: repeat(3, 1fr); }
+  .adv-card { aspect-ratio: 3/4; }
+  .fd-grid { gap: 3rem; }
+}
+
+/* ── 1024px — Tablet landscape ── */
+@media (max-width: 1024px) {
+  /* Hero */
+  .hero { padding: 7rem 5% 4rem; }
+  .hero-wrap { grid-template-columns: 1fr; gap: 2.5rem; max-width: 680px; }
+  .hero-video-card { max-width: 100%; }
+  .cube-scene { display: none; }
+
+  /* Navbar */
+  .nav-links { display: none; }
+  .nav-phone { display: none; }
+  .nav-burger { display: flex; }
+  .navbar { top: 34px; }
+  .navbar.scrolled { top: 0; }
+
+  /* Sections */
+  .class-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .featured-grid { grid-template-columns: 1fr; max-width: 600px; margin: 0 auto; }
+  .courses-grid { grid-template-columns: repeat(2, 1fr); }
+  .testi-grid { grid-template-columns: repeat(2, 1fr); }
+  .office-container { grid-template-columns: 1fr; }
+  .awards-main { grid-template-columns: repeat(3, 1fr); }
+  .footer { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .cta-h2 { font-size: clamp(2.8rem, 6vw, 4.5rem); }
+
+  /* Advantage cards */
+  .adv-grid { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  .adv-card { aspect-ratio: 3/4; }
+  .adv-desc { display: block; }
+
+  /* Tools */
+  .tools-grid { grid-template-columns: repeat(4, 1fr); }
+
+  /* Why us */
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Journey */
+  .timeline { max-width: 650px; }
+}
+
+/* ── 900px — Tablet portrait ── */
+@media (max-width: 900px) {
+  /* Common */
+  .sec-pad { padding: 5rem 5%; }
+  .sec-h2 { font-size: clamp(2rem, 5.5vw, 3.2rem); }
+
+  /* Stats */
+  .stats-section { grid-template-columns: repeat(3, 1fr); }
+  .stat-item:last-child { border-right: .5px solid var(--border); }
+
+  /* Not Just Course */
+  .njc-grid { grid-template-columns: repeat(2, 1fr); gap: 1.2rem; }
+  .njc-card { min-height: 300px; }
+
+  /* Advantage */
+  .adv-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  .adv-card { aspect-ratio: 3/4; }
+
+  /* Tools */
+  .tools-grid { grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+  .tools-section { padding: 5rem 5%; }
+
+  /* Live class */
+  .class-grid { grid-template-columns: 1fr; }
+  .class-photos { grid-template-columns: repeat(2, 1fr); }
+
+  /* Featured */
+  .featured-grid { grid-template-columns: 1fr; }
+
+  /* OurWork */
+  .work-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* All courses */
+  .courses-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Why us */
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Awards */
+  .awards-main { grid-template-columns: repeat(2, 1fr); }
+  .awards-more { grid-template-columns: repeat(2, 1fr); }
+
+  /* Testimonials */
+  .testi-grid { grid-template-columns: 1fr; }
+
+  /* Footer */
+  .footer { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+  .footer-col a { font-size: .82rem; }
+
+  /* CTA */
+  .cta-actions { flex-direction: column; align-items: center; gap: 1rem; }
+  .cta-actions > * { width: 100%; max-width: 340px; justify-content: center !important; }
+  .cta-proof { flex-wrap: wrap; gap: 2rem; }
+
+  /* Announcement bar */
+  .announcement-inner { font-size: .72rem; gap: .5rem; }
+  .ann-cta { display: none; }
+  .navbar { top: 30px; }
+}
+
+/* ── 768px — Mobile landscape / large phone ── */
+@media (max-width: 768px) {
+  /* Sections */
+  .njc-section, .advantage-section, .tools-section,
+  .our-work, .cfv2-section, .all-courses,
+  .why-us, .awards, .offices, .testimonials,
+  .lead-section, .cta-section, .journey { padding: 4.5rem 4%; }
+  .featured-section { padding: 4.5rem 4%; }
+  .liveclass { padding: 4.5rem 4%; }
+
+  /* Hero */
+  .hero { padding: 6.5rem 4% 3.5rem; }
+  .hero-h1 { font-size: clamp(2.6rem, 10vw, 4rem); }
+  .hero-sub { font-size: .88rem; }
+  .hero-actions { flex-direction: column; align-items: flex-start; gap: .8rem; }
+  .hero-actions > * { width: 100%; max-width: 340px; justify-content: center !important; }
+  .hero-proof-chips { gap: .4rem; }
+  .proof-chip { font-size: .72rem; padding: .3rem .7rem; }
+  .hero-video-card { display: none; }
+
+  /* Stats */
+  .stats-section { grid-template-columns: repeat(2, 1fr); }
+  .stat-item:last-child { grid-column: 1 / -1; }
+
+  /* Not Just Course */
+  .njc-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .njc-main-title { font-size: clamp(1.8rem, 6vw, 2.6rem); }
+  .njc-card { min-height: 260px; padding: 1.6rem 1.2rem 1.4rem; }
+  .njc-card-title { font-size: 1.25rem; }
+  .njc-icon { font-size: 2.4rem; }
+
+  /* Advantage */
+  .adv-grid { grid-template-columns: 1fr 1fr; gap: .8rem; }
+  .adv-card { aspect-ratio: 3/4; }
+  .adv-title { font-size: .95rem; }
+  .adv-desc { font-size: .7rem; }
+
+  /* Tools */
+  .tools-grid { grid-template-columns: repeat(4, 1fr); gap: .8rem; }
+  .tool-card { padding: 1.2rem .6rem 1rem; border-radius: 10px; }
+  .tool-icon-wrap { width: 52px; height: 52px; border-radius: 12px; }
+  .tool-name { font-size: .68rem; }
+  .tools-heading { font-size: clamp(2rem, 7vw, 3rem); }
+
+  /* Live class */
+  .class-quote { font-size: 1rem; }
+
+  /* Course features */
+  .cfv2-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+  .cfv2-card { min-height: 280px; }
+  .cfv2-card-wide .cfv2-card { min-height: 240px; }
+  .cfv2-heading { font-size: clamp(1.8rem, 6vw, 2.6rem); }
+
+  /* All courses */
+  .courses-grid { grid-template-columns: 1fr; }
+  .course-title { font-size: 1.1rem; }
+
+  /* Journey timeline */
+  .tl-year { font-size: .75rem; }
+  .tl-title { font-size: 1rem; }
+  .tl-desc { font-size: .82rem; }
+
+  /* Why us */
+  .why-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .why-card { padding: 1.4rem 1.2rem; }
+  .why-title { font-size: .95rem; }
+  .why-desc { font-size: .78rem; }
+
+  /* Awards */
+  .awards-main { grid-template-columns: 1fr; }
+  .awards-more { grid-template-columns: repeat(2, 1fr); }
+
+  /* Offices */
+  .office-city { font-size: clamp(2rem, 8vw, 3rem); }
+  .office-photos { grid-template-columns: repeat(2, 1fr); }
+
+  /* Testimonials */
+  .testi-grid { grid-template-columns: 1fr; }
+  .testi-text { font-size: .85rem; }
+
+  /* Lead form */
+  .lead-inner { grid-template-columns: 1fr; gap: 2rem; }
+  .lead-card { padding: 1.5rem; }
+  .lead-perks { gap: .65rem; }
+
+  /* Footer */
+  .footer { grid-template-columns: 1fr; gap: 2rem; padding: 3.5rem 5%; }
+  .footer-bottom { flex-direction: column; gap: .5rem; text-align: center; }
+
+  /* OurWork */
+  .work-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .work-tabs { gap: .35rem; }
+  .work-tab { font-size: .72rem; padding: .4rem .9rem; }
+
+  /* Founder */
+  .fd-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .fd-cred-grid { grid-template-columns: 1fr 1fr; }
+  .fd-stats-row { grid-template-columns: repeat(4, 1fr); padding: .8rem .5rem; }
+
+  /* Bot / WA */
+  .bot-float { bottom: 5rem; right: 1rem; width: 48px; height: 48px; font-size: 1.25rem; }
+  .wa-float { bottom: 1rem; right: 1rem; width: 48px; height: 48px; }
+  .bot-panel { right: .5rem; left: .5rem; width: auto; bottom: 9.5rem; }
+}
+
+/* ── 600px — Mobile ── */
+@media (max-width: 600px) {
+  /* Typography */
+  .sec-h2 { font-size: clamp(1.8rem, 7vw, 2.6rem); }
+  .sec-body { font-size: .88rem; }
+  .sec-pad { padding: 4rem 4%; }
+  .sec-pad-sm { padding: 3rem 4%; }
+
+  /* Navbar */
+  .nav-announcement { display: none; }
+  .navbar { top: 0; padding: .75rem 4%; }
+  .navbar.scrolled { top: 0; }
+
+  /* Hero */
+  .hero { padding: 5.5rem 4% 3rem; }
+  .hero-h1 { font-size: clamp(2.2rem, 11vw, 3.5rem); letter-spacing: .04em; }
+  .hero-badge { font-size: .68rem; padding: .3rem .9rem; }
+  .hero-sub { font-size: .85rem; line-height: 1.75; }
+  .hero-actions { gap: .65rem; }
+  .hero-proof-chips { gap: .35rem; margin-top: .8rem; }
+  .proof-chip { font-size: .68rem; padding: .25rem .6rem; }
+
+  /* Stats */
+  .stats-section { grid-template-columns: repeat(2, 1fr); gap: 0; }
+  .stat-item:last-child { border-right: .5px solid var(--border); grid-column: 1 / -1; }
+  .stat-num-big { font-size: clamp(1.8rem, 7vw, 2.6rem); }
+  .stat-label { font-size: .65rem; }
+
+  /* NJC */
+  .njc-section { padding: 4rem 4%; }
+  .njc-grid { grid-template-columns: 1fr; gap: .9rem; }
+  .njc-card { min-height: auto; flex-direction: row; align-items: center; gap: 1rem; padding: 1.2rem; }
+  .njc-icon { font-size: 2rem; margin: 0; width: auto; }
+  .njc-card-title { font-size: 1.05rem; margin-bottom: 0; }
+  .njc-card-desc { font-size: .78rem; margin-top: .3rem; }
+  .njc-shine { display: none; }
+
+  /* Advantage */
+  .adv-grid { grid-template-columns: 1fr; gap: .8rem; }
+  .adv-card { aspect-ratio: 16/9; }
+  .advantage-section { padding: 4rem 4%; }
+
+  /* Tools */
+  .tools-grid { grid-template-columns: repeat(2, 1fr); gap: .8rem; }
+  .tools-section { padding: 4rem 4%; }
+  .tool-icon-wrap { width: 44px; height: 44px; border-radius: 10px; }
+  .tool-abbr { font-size: .95rem; }
+  .tool-card { padding: 1rem .5rem .9rem; }
+
+  /* LiveClass */
+  .liveclass { padding: 4rem 4%; }
+  .class-photos { grid-template-columns: repeat(2, 1fr); }
+
+  /* Featured */
+  .featured-section { padding: 4rem 4%; }
+  .feat-tools { gap: .35rem; }
+  .feat-tool { font-size: .68rem; padding: .2rem .55rem; }
+  .feat-learns { gap: .5rem; }
+
+  /* OurWork */
+  .our-work { padding: 4rem 4%; }
+  .work-grid { grid-template-columns: 1fr; }
+  .work-tabs { justify-content: flex-start; overflow-x: auto; padding-bottom: .35rem; flex-wrap: nowrap; }
+  .work-tab { flex-shrink: 0; }
+
+  /* CourseFeatures */
+  .cfv2-section { padding: 4rem 4%; }
+  .cfv2-card { min-height: 260px; }
+  .cfv2-content { padding: 1.2rem 1.2rem 1.4rem; }
+  .cfv2-num { font-size: 1.8rem; top: .8rem; right: .8rem; }
+  .cfv2-title { font-size: 1.05rem; }
+
+  /* All Courses */
+  .all-courses { padding: 4rem 4%; }
+  .courses-grid { grid-template-columns: 1fr; gap: 1rem; }
+
+  /* Founder */
+  .fd-section { padding: 4rem 4%; }
+  .fd-heading { font-size: clamp(1.8rem, 7vw, 2.6rem); }
+  .fd-name-rawal, .fd-name-singh { font-size: clamp(2rem, 9vw, 3rem); }
+  .fd-stats-row { grid-template-columns: repeat(2, 1fr); gap: .5rem; }
+  .fd-stat-val { font-size: 1.1rem; }
+  .fd-cred-grid { grid-template-columns: 1fr 1fr; gap: .7rem; }
+  .fd-cred-img { aspect-ratio: 1/1; }
+  .fd-quote { font-size: .95rem; padding: 1rem; }
+  .fd-bio { font-size: .85rem; line-height: 1.85; }
+  .fd-badges { gap: .4rem; }
+  .fd-badge { font-size: .7rem; padding: .28rem .7rem; }
+  .fd-accent-float { right: 0; bottom: -.8rem; padding: .8rem 1rem; }
+  .fd-accent-num { font-size: 1.8rem; }
+  .fd-bottom-cta { flex-direction: column; align-items: flex-start; }
+
+  /* Journey */
+  .journey { padding: 4rem 4%; }
+  .timeline { padding-left: 3rem; }
+  .tl-year { font-size: .72rem; padding: .22rem .6rem; }
+
+  /* Why Us */
+  .why-us { padding: 4rem 4%; }
+  .why-grid { grid-template-columns: 1fr 1fr; gap: .8rem; }
+  .why-card { padding: 1.2rem; }
+  .why-icon { font-size: 1.5rem; }
+  .why-title { font-size: .88rem; }
+  .why-desc { font-size: .75rem; }
+
+  /* Awards */
+  .awards { padding: 4rem 4%; }
+  .awards-main { gap: 1rem; }
+  .award-card { border-radius: var(--radius); }
+
+  /* Offices */
+  .offices { padding: 4rem 4%; }
+
+  /* Testimonials */
+  .testimonials { padding: 4rem 4%; }
+
+  /* Lead */
+  .lead-section { padding: 4rem 4%; }
+  .lead-card { padding: 1.3rem; }
+  .lead-form-header h3 { font-size: 1.3rem; }
+
+  /* CTA */
+  .cta-section { padding: 5rem 4%; }
+  .cta-h2 { font-size: clamp(2.2rem, 9vw, 3.5rem); }
+  .cta-sub { font-size: .88rem; }
+  .cta-actions { padding: 1.5rem 0; }
+  .btn-wa, .btn-p { font-size: .88rem !important; padding: .9rem 1.6rem !important; }
+
+  /* Footer */
+  .footer { padding: 3rem 4%; gap: 1.8rem; }
+  .footer-tag { font-size: .82rem; }
+  .footer-col h4 { font-size: .9rem; }
+  .footer-col a { font-size: .8rem; }
+  .footer-bottom { font-size: .72rem; }
+
+  /* Bot / WA */
+  .bot-float { bottom: 4.8rem; right: .8rem; width: 44px; height: 44px; font-size: 1.15rem; }
+  .wa-float { bottom: .8rem; right: .8rem; width: 44px; height: 44px; }
+  .bot-panel { right: .35rem; left: .35rem; width: auto; bottom: 9rem; }
+  .bot-quick { gap: .3rem; }
+  .bot-qr { font-size: .66rem; padding: .25rem .6rem; }
+}
+
+/* ── 400px — Very small mobile ── */
+@media (max-width: 400px) {
+  .hero-h1 { font-size: clamp(1.9rem, 12vw, 2.8rem); }
+  .njc-card { flex-direction: column; align-items: flex-start; }
+  .njc-icon { margin-bottom: .3rem; }
+  .tools-grid { grid-template-columns: repeat(2, 1fr); gap: .6rem; }
+  .tool-icon-wrap { width: 38px; height: 38px; }
+  .adv-card { aspect-ratio: 3/2; }
+  .fd-cred-grid { grid-template-columns: 1fr; }
+  .why-grid { grid-template-columns: 1fr; }
+  .mobile-panel { width: 100%; border-left: none; border-radius: 0; }
+  .pre-line { font-size: clamp(3.5rem, 15vw, 6rem); letter-spacing: .06em; }
+}
+
+/* ── Touch / hover adjustments ── */
+@media (hover: none) {
+  /* On touch devices, show info that would normally need hover */
+  .adv-desc { display: block; }
+  .cfv2-desc { opacity: 1; height: auto; }
+  .work-overlay { background: rgba(0,0,0,.25); }
+  .play-btn-circle { opacity: 1; }
+  .hvc-play { opacity: 1; }
+}
+
+/* ── Landscape mobile ── */
+@media (max-width: 812px) and (orientation: landscape) {
+  .hero { min-height: auto; padding: 5rem 5% 3rem; }
+  .pre-line { font-size: clamp(2.5rem, 8vh, 5rem); }
+  .preloader-center { gap: .8rem; }
+}
+
+/* ── Print ── */
+@media print {
+  .navbar, .bot-float, .wa-float, .pre-root, .pre-morph,
+  .pre-blob, .adv-grid, .cube-scene { display: none !important; }
+}
