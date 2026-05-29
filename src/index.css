@@ -522,29 +522,39 @@ h1, h2, h3 { font-family: var(--FD); }
   transition: all .25s;
 }
 
-/* ── NAVBAR RESPONSIVE BREAKPOINTS ── */
+/* ════════════════════════════════════
+   NAVBAR — RESPONSIVE BREAKPOINTS
+════════════════════════════════════ */
 
-/* 1024px — hide phone number */
-@media (max-width: 1024px) {
+/* 1100px — hide phone */
+@media (max-width: 1100px) {
   .nav-phone { display: none; }
 }
 
-/* 860px — switch to mobile mode */
+/* 860px — full mobile mode */
 @media (max-width: 860px) {
-  .navbar { padding: .75rem 4%; gap: .5rem; }
-  /* Hide desktop elements */
-  .nav-links { display: none; }
-  .nav-cta  { display: none; }
-  .nav-phone { display: none; }
-  /* Show burger */
-  .nav-burger { display: flex; }
+  /* ALWAYS show background on mobile, even before scroll */
+  .navbar {
+    padding: .7rem 4%; gap: .5rem;
+    top: 0 !important;
+    background: rgba(8,8,8,.94) !important;
+    backdrop-filter: blur(20px) saturate(1.5) !important;
+    border-bottom: .5px solid rgba(255,255,255,.07) !important;
+    box-shadow: 0 2px 20px rgba(0,0,0,.4);
+  }
+  /* Only show logo + burger */
+  .nav-links  { display: none !important; }
+  .nav-cta    { display: none !important; }
+  .nav-phone  { display: none !important; }
+  .nav-burger { display: flex !important; }
 }
 
-/* 600px — hide announcement, stick navbar to top */
+/* 600px — small mobile */
 @media (max-width: 600px) {
-  .nav-announcement { display: none; }
-  .navbar { top: 0 !important; padding: .65rem 4%; }
-  .nav-burger { padding: .38rem .4rem; }
+  .nav-announcement { display: none !important; }
+  .navbar { padding: .6rem 4%; }
+  .nav-logo-wrap svg { height: 30px !important; }
+  .nav-burger { padding: .35rem .38rem; }
   .nav-burger span { width: 20px; }
 }
 
@@ -630,6 +640,7 @@ h1, h2, h3 { font-family: var(--FD); }
 ════════════════════════════ */
 .hero {
   min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -3986,4 +3997,161 @@ button { font-family: var(--FB); }
 @media print {
   .navbar, .bot-float, .wa-float, .pre-root, .pre-morph,
   .pre-blob, .adv-grid, .cube-scene { display: none !important; }
+}
+
+/* ════════════════════════════════════════════
+   MOBILE OVERFLOW & GLOBAL RESPONSIVE FIXES
+════════════════════════════════════════════ */
+
+/* Prevent ANY horizontal overflow on mobile */
+html, body { max-width: 100vw; overflow-x: hidden; }
+* { box-sizing: border-box; }
+img, video, iframe, svg { max-width: 100%; }
+
+/* Hero — prevent text overflow on small screens */
+.hero-h1 span { word-break: keep-all; }
+.hero-content { max-width: 100%; overflow: hidden; }
+.hero-wrap { overflow: hidden; }
+
+/* Preloader text — prevent overflow */
+.pre-words { overflow: hidden; width: 100%; }
+.pre-line { overflow: hidden; justify-content: center; }
+
+/* Trust strip */
+.trust-strip { overflow: hidden; }
+
+/* Sections — max-width containment */
+.njc-section, .advantage-section, .tools-section,
+.our-work, .cfv2-section, .all-courses,
+.why-us, .awards, .offices, .testimonials,
+.featured-section, .liveclass, .lead-section,
+.cta-section, .journey, .fd-section { overflow-x: hidden; }
+
+/* Cards — prevent content overflow */
+.njc-card, .adv-card, .cfv2-card, .work-card,
+.feat-card, .course-card, .testi-card, .why-card { overflow: hidden; }
+
+/* Tables / grids — don't let columns overflow */
+.njc-grid, .adv-grid, .tools-grid, .work-grid,
+.cfv2-grid, .courses-grid, .why-grid, .awards-main,
+.awards-more, .featured-grid { width: 100%; }
+
+/* Mobile panel full height safe */
+.mobile-panel { height: 100%; height: 100dvh; }
+
+/* ── PRECISE MOBILE OVERRIDES ── */
+
+@media (max-width: 860px) {
+  /* Hero: push below fixed navbar */
+  .hero { padding-top: 5.5rem; }
+
+  /* Mobile panel width fix */
+  .mobile-panel { width: min(340px, 92vw); }
+}
+
+@media (max-width: 600px) {
+  /* Global */
+  body { font-size: 15px; }
+
+  /* Hero text containment */
+  .hero { padding: 5rem 4% 3rem; min-height: 100svh; }
+  .hero-h1 { font-size: clamp(2rem, 10.5vw, 3.2rem); line-height: .9; letter-spacing: .02em; }
+  .hero-badge { font-size: .62rem; letter-spacing: .06em; white-space: normal; text-align: center; }
+  .hero-sub { font-size: .82rem; line-height: 1.7; }
+  .hero-proof-chips { gap: .3rem; }
+  .proof-chip { font-size: .67rem; padding: .22rem .55rem; }
+  .hero-actions .btn-p, .hero-actions .hero-play-btn { font-size: .88rem; padding: .8rem 1.4rem; }
+
+  /* Stats row — 2 cols */
+  .stats-section { grid-template-columns: 1fr 1fr !important; }
+  .stat-label { font-size: .62rem; }
+
+  /* NJC cards — single col, horizontal layout */
+  .njc-grid { grid-template-columns: 1fr !important; }
+  .njc-card { min-height: auto !important; flex-direction: row !important; gap: 1rem; padding: 1.2rem !important; }
+  .njc-card-title { font-size: 1rem !important; }
+  .njc-icon { font-size: 2.2rem !important; margin: 0 !important; width: auto !important; flex-shrink: 0; }
+  .njc-card-desc { font-size: .76rem !important; }
+
+  /* Advantage — single col */
+  .adv-grid { grid-template-columns: 1fr 1fr !important; }
+  .adv-card { aspect-ratio: 1/1 !important; }
+  .adv-title { font-size: .88rem; }
+
+  /* Tools — 2 col */
+  .tools-grid { grid-template-columns: repeat(2, 1fr) !important; gap: .7rem !important; }
+  .tool-card { padding: .9rem .5rem !important; }
+  .tool-icon-wrap { width: 42px !important; height: 42px !important; }
+  .tool-abbr { font-size: .88rem !important; }
+  .tool-name { font-size: .65rem !important; }
+
+  /* Featured */
+  .featured-grid { grid-template-columns: 1fr !important; }
+  .feat-course-title { font-size: 1.1rem; }
+
+  /* Our work — single col */
+  .work-grid { grid-template-columns: 1fr !important; }
+
+  /* Course features — single col */
+  .cfv2-grid { grid-template-columns: 1fr !important; }
+  .cfv2-card { min-height: 250px !important; }
+  .cfv2-title { font-size: 1rem !important; }
+
+  /* All courses */
+  .courses-grid { grid-template-columns: 1fr !important; }
+
+  /* Why us — 2 col */
+  .why-grid { grid-template-columns: 1fr 1fr !important; }
+  .why-title { font-size: .85rem; }
+  .why-desc { font-size: .73rem; }
+
+  /* Awards */
+  .awards-main { grid-template-columns: 1fr !important; }
+  .awards-more { grid-template-columns: 1fr 1fr !important; }
+
+  /* Testimonials */
+  .testi-grid { grid-template-columns: 1fr !important; }
+
+  /* Lead form */
+  .lead-inner { grid-template-columns: 1fr !important; }
+  .lead-perks { display: none; }
+  .lead-urgency { font-size: .8rem; }
+
+  /* CTA */
+  .cta-h2 { font-size: clamp(2rem, 8.5vw, 3rem) !important; }
+  .cta-actions { gap: .8rem; }
+  .cta-actions > * { font-size: .88rem !important; padding: .85rem 1.4rem !important; }
+
+  /* Footer */
+  .footer { grid-template-columns: 1fr !important; }
+  .footer-col h4 { font-size: .88rem; }
+
+  /* Founder */
+  .fd-grid { grid-template-columns: 1fr !important; }
+  .fd-stats-row { grid-template-columns: repeat(2, 1fr) !important; }
+  .fd-cred-grid { grid-template-columns: 1fr 1fr !important; }
+
+  /* Journey */
+  .timeline { padding-left: 2.5rem; }
+  .tl-title { font-size: .92rem; }
+  .tl-desc { font-size: .8rem; }
+
+  /* Offices */
+  .office-container { grid-template-columns: 1fr !important; }
+  .class-grid { grid-template-columns: 1fr !important; }
+
+  /* Section headings */
+  .sec-h2 { font-size: clamp(1.7rem, 7vw, 2.4rem) !important; }
+  .sec-body { font-size: .85rem; }
+}
+
+@media (max-width: 400px) {
+  .hero-h1 { font-size: clamp(1.8rem, 9.5vw, 2.6rem); }
+  .njc-card { flex-direction: column !important; }
+  .adv-grid { grid-template-columns: 1fr !important; }
+  .adv-card { aspect-ratio: 16/9 !important; }
+  .why-grid { grid-template-columns: 1fr !important; }
+  .fd-cred-grid { grid-template-columns: 1fr !important; }
+  .tools-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .pre-line { font-size: clamp(3rem, 14vw, 5rem); letter-spacing: .05em; }
 }
